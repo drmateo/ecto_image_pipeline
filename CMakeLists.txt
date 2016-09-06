@@ -3,7 +3,7 @@ project(ecto_image_pipeline)
 
 find_package(Boost REQUIRED)
 find_package(catkin REQUIRED cmake_modules opencv_candidate)
-find_package(Eigen REQUIRED)
+find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(PCL QUIET COMPONENTS common)
 if(PCL_FOUND)
@@ -42,7 +42,7 @@ install(DIRECTORY ${ecto_image_pipeline_SOURCE_DIR}/include/ecto_image_pipeline/
 )
 endif()
 
-include_directories(SYSTEM ${Eigen_INCLUDE_DIRS}
+include_directories(SYSTEM ${EIGEN3_INCLUDE_DIRS}
                            ${Boost_INCLUDE_DIRS}
 )
 

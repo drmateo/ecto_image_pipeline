@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 2.8)
 project(ecto_image_pipeline)
 
-find_package(Boost REQUIRED)
+find_package(Boost COMPONENTS system thread python REQUIRED)
 find_package(catkin REQUIRED cmake_modules opencv_candidate)
 find_package(Eigen REQUIRED)
 find_package(OpenCV REQUIRED)
-find_package(PCL QUIET COMPONENTS common)
+find_package(PCL QUIET COMPONENTS common registration)
 if(PCL_FOUND)
 catkin_package(CATKIN_DEPENDS opencv_candidate
                DEPENDS Boost Eigen OpenCV PCL

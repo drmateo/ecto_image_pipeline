@@ -1,4 +1,3 @@
-#find_package(PCL QUIET COMPONENTS common registration)
 
 if(NOT PCL_FOUND)
 message(WARNING "PCL could not be found, so not building conversion cells.")
@@ -18,7 +17,7 @@ ectomodule(conversion DESTINATION ecto_image_pipeline
   )
 
 link_ecto(conversion
-  ${Boost_LIBRARIES}
   ${OpenCV_LIBS}
-  ${PCL_LIBRARIES}  
-)
+  ${PCL_LIBRARIES}
+  ${Boost_LIBRARIES}
+  )
